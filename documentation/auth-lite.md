@@ -34,14 +34,14 @@ expires_at: number
 
 ## Injection Tokens and Guards
 
-``ts
+```ts
 // libs/auth/application/src/lib/auth/auth-repository.interface.ts
 export interface AuthRepositoryInterface {
   getCurrentUser(): Observable<CaliberUser | null>;
   loginWithPasscodeOrProvider(credentials: any): Promise<CaliberUser>;
   hasPermission(permission: CaliberPermission): boolean;
 }
-``
+```
 our Angular route guards will check the Signal Store state, which is fed directly from the local Dexie auth_session table.
 
     When Online: The Supabase client verifies the JWT.
